@@ -13,27 +13,27 @@ import agendarHr from "../../public/img/agendar.png";
 export default function Home() {
   const dados = [
     {
-      href: "https://google.com",
-      alt: "as",
+      href: "https://wa.me/+5544998596467?text=Oi%20Agatha%2C%20gostaria%20de%20agendar%20uma%20avalia%C3%A7%C3%A3o%20corporal",
+      alt: "agendar",
+      src: agendarHr,
+    },
+    {
+      href: "https://wa.me/+5544998596467?text=Gostaria%20de%20receber%20o%20pdf%20de%20informa%C3%A7%C3%B5es%20do%20curso%20%20presencial%20",
+      alt: "curso presencial",
       src: cursoPresencial,
     },
     {
-      href: "https://google.com",
-      alt: "as",
+      href: "https://wa.me/+5544998596467?text=Gostaria%20de%20receber%20o%20pdf%20de%20informa%C3%A7%C3%B5es%20do%20curso%20online%20",
+      alt: "curso online",
       src: cursoOnline,
-    },
-    {
-      href: "https://google.com",
-      alt: "as",
-      src: agendarHr,
     },
   ];
 
   return (
     <>
-      <main >
+      <main>
         <Image
-          className="bgImage"
+          className="bgImage bg-repeat"
           src={bgImage}
           alt="bg"
           layout="fill"
