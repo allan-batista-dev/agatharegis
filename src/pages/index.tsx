@@ -1,22 +1,38 @@
 import Image from 'next/image';
-import type { ImageLoaderProps } from 'next/image';
-import Head from "next/head";
-import agathaImage from "../../public/img/agatha.jpeg"
-import bgImage from "../../public/img/bg1.png"
-import WhatsAppButton from "@/components/WhatsAppButton";
-import imgcard from "../../public/img/card.png"
 import Link from "next/link";
-import { stringify } from 'querystring';
+import Head from "next/head";
+
+import WhatsAppButton from "@/components/WhatsAppButton";
+
+import bgImage from "../../public/img/bg1.png"
+import agathaImage from "../../public/img/agatha.jpeg"
+import cursoPresencial from "../../public/img/card-presencial.png"
+import cursoOnline from "../../public/img/curso-on.png"
+import agendarHr from "../../public/img/agendar.png"
+
+
+
 
 export default function Home() {
     const dados = [
         {
             href: "https://google.com",
             alt: "as",
-            src : {imgcard} 
+            src: cursoPresencial
         },
-       
+        {
+            href: "https://google.com",
+            alt: "as",
+            src: cursoOnline
+        },
+        {
+            href: "https://google.com",
+            alt: "as",
+            src: agendarHr
+        },
+
     ];
+
     return (
         <>
             <main>
@@ -27,6 +43,7 @@ export default function Home() {
                     layout="fill"
                     objectFit="cover"
                     objectPosition="center"
+                    sizes='cover'
                     priority
                 />
                 <Head>
@@ -50,28 +67,26 @@ export default function Home() {
                 </div>
                 <div className="flex justify-center mb-6">
                     <ul>
-                        {dados.map((card) => (
-                            <li>
+                        {dados.map((card, index) => (
+                            <li key={index} className='mb-4'>
                                 {
                                     card.src && (
                                         <Link
-                                    href={card.href}
-                                >
-                                        <Image
-                                            src={imgcard}
-                                            alt={card.alt}
-                                            width={200}
-                                            height={200}
-                                        />
-                                </Link>
+                                            href={card.href}
+                                        >
+                                            <Image
+                                                src={card.src}
+                                                alt={card.alt}
+                                                width={400}
+                                                height={350}
+                                                className='rounded-md shadow-2xl shadow-gray-900 hover:-translate-y-1 hover:scale-110'
+                                            />
+                                        </Link>
                                     )
                                 }
                             </li>
                         ))}
                     </ul>
-                </div>
-                <div className="flex justify-center">
-                    <WhatsAppButton />
                 </div>
             </main>
         </>
