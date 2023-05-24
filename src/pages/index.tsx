@@ -31,9 +31,9 @@ export default function Home() {
 
   return (
     <>
-      <main className="w-full h-full">
+      <main >
         <Image
-          className="bgImage h-full w-full"
+          className="bgImage"
           src={bgImage}
           alt="bg"
           layout="fill"
@@ -63,14 +63,14 @@ export default function Home() {
           <div className="flex justify-center mb-6">
             <ul>
               {dados.map((card, index) => (
-                <li key={index} className="mb-4">
+                <li key={index} className="mb-4 px-6">
                   {card.src && (
                     <Link href={card.href}>
                       <Image
                         src={card.src}
                         alt={card.alt}
-                        layout="responsive"
-                        className="rounded-md shadow-2xl shadow-gray-900 px-2"
+                        // layout="responsive"
+                        className="rounded-md shadow-2xl shadow-gray-900"
                       />
                     </Link>
                   )}
