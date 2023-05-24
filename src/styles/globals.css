@@ -2,10 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Abhaya+Libre&display=swap');
 
 html {
-    font-family: 'Prata', serif;
+    font-family: 'Abhaya Libre', serif;
 }
 
 .bgImage {
